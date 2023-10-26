@@ -1,173 +1,97 @@
 # artisan-list
-## Comandos mais usados Laravel
+## lista de comandos Artisan no Laravel, juntamente com uma breve descrição de cada um deles:
 
-Listagem de comandos do artisan 
-Abaixo irei listar a maioria (se não todos) os comandos para o artisan, também deixarei pequenos exemplos e informações para que servem cada um deles.
+Comandos básicos
 
-php artisan clear-compiled
-Remove os arquivos de classe já compilados.
+artisan: Lista todos os comandos disponíveis.
+artisan help [comando]: Exibe a ajuda para um comando específico.
+artisan inspire: Exibe uma mensagem de inspiração.
+artisan list: Exibe uma lista de todos os comandos disponíveis.
+artisan serve: Inicia o servidor de desenvolvimento PHP.
 
-php artisan down
-Coloca aplicação em modo de manutenção.
+Comandos de banco de dados
 
-php artisan up
-Tira a aplicação de modo de manutenção e coloca novamente em produção. 
+artisan db: Lista todos os comandos de banco de dados disponíveis.
+artisan db:seed: Insere dados de exemplo no banco de dados.
+artisan db:wipe: Exclui todas as tabelas, visualizações e tipos do banco de dados.
 
-php artisan env
-Exibe as variáveis de ambiente definidas para o framework, por exemplo se está é uma aplicação local ou está no servidor.
+Comandos de configuração
 
-php artisan help
-Exibe a ajuda para os comandos determinados.
+artisan config: Lista todos os comandos de configuração disponíveis.
+artisan config:cache: Cria um arquivo de cache para acelerar o carregamento de configurações.
+artisan config:clear: Remove o arquivo de cache de configuração.
 
-php artisan list
-Exibe a listagem de comandos disponíveis.
+Comandos de eventos
 
-php artisan migrate
-Executa as migrations de um banco de dados, esse comando recebe alguns outros parâmetros e vamos vê-los.
+artisan event: Lista todos os comandos de eventos disponíveis.
+artisan event:cache: Descobre e armazena em cache os eventos e ouvintes da aplicação.
+artisan event:clear: Limpa todos os eventos e ouvintes armazenados em cache.
+artisan event:generate: Gera os eventos e ouvintes ausentes com base no registro.
+artisan event:list: Lista todos os eventos e ouvintes da aplicação.
 
-php artisan migrate:install
-Cria a tabela migrations, e caso já exista exibe um erro pois a tabela já foi criada, quando realizado o migrate essa tabela também é criada automaticamente.
+Comandos de chaves
 
-php artisan migrate:refresh
-Redefine e reexecuta todas as migrations.
+artisan key:generate: Gera uma chave secreta para a aplicação.
 
-php artisan migrate:reset
-Desfaz todas as ações executadas pelas migratórios.
+Comandos de modelos
 
-php artisan migrate:rollback
-Desfaz a última ação executada pela migration.
+artisan make: Cria um novo modelo Eloquent.
+artisan make:model: Cria um novo modelo Eloquent.
 
-php artisan migrate:status
-Exibe o status de cada migration, (Y para as executadas e N para não executadas).
+Comandos de autenticação
 
-php artisan optimize
-Otimiza o framework para uma melhor performance.
+artisan auth: Lista todos os comandos de autenticação disponíveis.
+artisan auth:clear-resets: Limpa os tokens de redefinição de senha expirados.
 
-php artisan tinker
-Torna os comandos do artisan interativos, quando executado entra em modo de terminal, assim podendo executar classes e também podendo executar todos os comandos do artisan sem a necessidade de colocar o "php artisan".
+Comandos de cache
 
-php artisan app:name
-Redefine o namespace da aplicação, (por padrão é o App).
+artisan cache: Lista todos os comandos de cache disponíveis.
+artisan cache:clear: Limpa o cache da aplicação.
+artisan cache:forget: Remove um item do cache.
+artisan cache:table: Cria uma migração para a tabela de cache do banco de dados.
 
-php artisan auth:clear-resets 
-Remove os tokens expirados de renovação de senhas
+Comandos de desenvolvimento
 
-php artisan cache:clear
-Limpa o cache da aplicação
+artisan down: Coloca a aplicação em modo de manutenção.
+artisan up: Remove a aplicação do modo de manutenção.
+Comandos de depuração
 
-php artisan cache:table
-Cria uma migração para a tabela cache do banco de dados.
+artisan tinker: Interage com a aplicação no console.
 
-php artisan config:cache
-Cria um arquivo de cache para acelerar o acesso dos dados de configuração, quando executado ele antes de criar realizar o comando config:clear.
+Comandos de otimização
 
-php artisan config:clear
-Remove o arquivo de cache criado para acelerar o acesso dos dados de configuração.
+artisan optimize: Cria um arquivo de cache para acelerar o carregamento do framework.
 
-php artisan db:seed
-executa o processo de seed do banco de dados, caso queria definir uma seed específica basta passar o parâmetro --class=NomeDaClasse, exemplo:
-php artisan db:seed --class=SeedDatabaseFeliz.
+Comandos de pacotes
 
-php artisan event:generate
-Gera os eventos e registros ausentes baseado em seus registros, (tradução), ao executar esse comando ele criou algumas classes (App\Events\Event; e App\Listeners\EventsListeners) ainda não sei bem o que é mais descobrindo atualizarei aqui!
+artisan package: Lista todos os comandos de pacotes disponíveis.
+artisan package:discover: Descobre e instala todos os pacotes necessários para a aplicação.
+artisan package:list: Lista todos os pacotes instalados na aplicação.
+artisan package:remove: Remove um pacote da aplicação.
+artisan package:update: Atualiza um pacote da aplicação.
 
-php artisan key:generate
-Gera uma chave para aplicação, quando realizado a instalação do Laravel essa chave já é criada no arquivo .env, sendo basicamente usada quando realizado um pull de algum repositório.
+Comandos de filas
 
-php artisan make:auth
-Gera um scaffold(andaime) de login, isso é cria todas as camadas necessárias para realização de cadastro login e recuperação de senha.
+artisan queue: Lista todos os comandos de filas disponíveis.
+artisan queue:listen: Inicia um trabalho de fila.
+artisan queue:work: Inicia um trabalho de fila em segundo plano.
 
-php artisan make:command [NomeClasse]
-Cria uma nova classe de comando para o artisan, localizada em app/Console/Commands/NomeClase.php.
+Comandos de rotas
 
-php artisan make:controller [NomeClasse]
-Gera um novo Controller, localizado em app/Http/Controllers/NomeClasse.php.
+artisan route: Lista todos os comandos de rotas disponíveis.
+artisan route:list: Lista todas as rotas da aplicação.
 
-php artisan make:event [NomeClasse]
-Gera uma nova classe do tipo Evento, localizado em app/Events/NomeClasse.php.
+Comandos de schedule
 
-php artisan make:job [NomeClasse]
-Gera uma nova classe do tipo Job, localizado em app/Jobs/NomeClasse.php.
+artisan schedule: Lista todos os comandos de schedule disponíveis.
+artisan schedule:run: Executa todos os trabalhos agendados.
 
-php artisan make:listener [NomeClasse]
+Comandos de testes
 
-Gera uma classe do tipo Listener relacionado a algum evento.
+artisan test: Executa todos os testes da aplicação.
+artisan test:watch: Executa todos os testes da aplicação sempre que um arquivo for alterado.
 
-php artisan make:mail [NomeClasse]
-Gera uma classe do tipo E-mail, localizado em app/Mail/NomeClasse.php.
+Comandos de view
 
-php artisan make:middleware [NomeClase]
-Gera uma classe do tipo middleware, localizada em app/Http/Middleware/NomeClasse.php.
-
-php artisan make:migration [NomeClasse]
-Gera uma nova classe do tipo migration, localizada em database/migrations/NomeClasse.php.
-
-php artisan make:notification [NomeClasse]
-Gera uma nova classe do tipo notification, logalizada em app/Notifications/NomeClasse.php
-
-php artisan make:policy [NomeClasse]
-Gera uma nova classe do tipo policy, localizada em app/Policies/NomeClasse.php
-
-php artisan make:provider [NomeClasse]
-Gera uma nova classe do tipo provider, localizada em app/Providers/NomeClasse.php
-
-php artisan make:request  [NomeClasse]
-Gera uma nova classe do tipo request, localizada em app/Http/Requests/NomeClasse.php
- 
-php artisan make:seeder [NomeClasse]
-Gera uma nova classe do tipo seed responsável por popular a tabela, se localiza em app/database/seeds/NomeClasse.php
- 
-php artisan make:test [NomeClasse]
-Gera uma nova classe do tipo teste, as quais normalmente são executadas pelo phpUnit localizando em vendor/phpunit, a classe gerada se localiza em /tests.
-
-php artisan queue:failed
-Lista todos os jobs (tarefas) com falha em uma fila.
-
-php artisan queue:failed-table
-Cria uma migration para a tabela "failed_jobs".
-
-php artisan queue:flush
-
-Limpa todos os trabalhos com falha em uma fila.
-
-php artisan queue:forget
-Exclui uma tarefa com falha da fila.
-
-php artisan queue:listen
-"Escuta" uma fila em execução.
-
-php artisan queue:restart
-Reinicia o processamento de uma fila.
-
-php artisan queue:retry
-Submete novamente uma fila com falhas para execução.
-
-php artisan queue:table
-Cria uma classe de migration para uma determinada fila,
-
-php artisan queue:work
-Executa a próxima tarefa de uma fila. 
-
-php artisan route:cache
-Cria um arquivo de cache para as rotas
-
-php artisan route:clear
-Limpa o arquivo de cache das rotas
-
-php artisan route:list
-Lista todas as rotas da aplicação
-
-php artisan schedule:run
-Executa comandos agendados
-
-php artisan session:table
-Cria uma migration para os dados de sessão.
-
-php artisan storage:link
-Cria um link simbólico de public/storage para storage/app/public.
-
-php artisan vendor:publish
-Publica arquivos públicos de pacotes de terceiros.
-
-php artisan view:clear
-Limpa os arquivos compilados das views.
+artisan view: Lista todos os comandos de view disponíveis.
+artisan view:clear: Limpa o cache de views.
